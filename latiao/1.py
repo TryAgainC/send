@@ -1,8 +1,11 @@
 import requests
 import random
 import threading
+import time 
 
-def regist():
+
+while(True):
+    time.sleep(1.5)
     url = "https://latiao.club/api/v1/passport/auth/register"
     qq_num = random.randint(1,9999999999)
 
@@ -18,12 +21,6 @@ def regist():
 
     r = requests.post(url=url,data=data)
     print(qq_email,qq_password,r)
-
-
-while(True):
-    t1 = threading.Thread(target=regist())
-    t1.start()
-
 
 
 
